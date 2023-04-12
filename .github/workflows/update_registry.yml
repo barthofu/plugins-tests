@@ -35,7 +35,7 @@ jobs:
       - name: Update versions registry
         id: update_registry
         run: |
-          node ./scripts/update-versions-registry.js ${{ steps.get_plugin_name.outputs.plugin_name }} ${{ steps.get_plugin_version.outputs.plugin_version }} ${{ github.event.pull_request.head.sha }}
+          node ./scripts/update-registry.js ${{ steps.get_plugin_name.outputs.plugin_name }} ${{ steps.get_plugin_version.outputs.plugin_version }} ${{ github.event.pull_request.head.sha }}
           
 
       
