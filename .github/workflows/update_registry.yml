@@ -36,6 +36,5 @@ jobs:
         id: update_registry
         run: |
           node ./scripts/updateRegistry.js ${{ steps.get_plugin_name.outputs.plugin_name }} ${{ steps.get_plugin_version.outputs.plugin_version }} ${{ github.event.pull_request.head.sha }}
-          
-
+          cat ./versions.json
       
