@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
+          fetch-depth: 0  # fetch all history
       
       - name: Get plugin name
         id: get_plugin_name
