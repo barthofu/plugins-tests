@@ -20,6 +20,5 @@ jobs:
       - name: Get plugin name
         id: get_plugin_name
         run: |
-          echo "$(git log)"
           echo "plugin_name=$(git diff --name-only HEAD~1 HEAD~2 | grep -m1 "" | cut -d'/' -f2)" >> $GITHUB_STATE
-          echo $GITHUB_STATE
+          cat $GITHUB_STATE
