@@ -35,8 +35,8 @@ jobs:
       - name: Update versions registry
         id: update_registry
         env:
-          CI_COMMIT_AUTHOR: "Bartholomé Gili"
-          CI_COMMIT_AUTHOR_EMAIL: "dev.bartho@gmail.com"
+          CI_COMMIT_AUTHOR: "Registry Updater Bot"
+          CI_COMMIT_AUTHOR_EMAIL: "bot@github.com"
           CI_COMMIT_MESSAGE: "update(registry): ${{ steps.get_plugin_name.outputs.plugin_name }}@${{ steps.get_plugin_version.outputs.plugin_version }}"
         run: |
           node ./scripts/updateRegistry.js ${{ steps.get_plugin_name.outputs.plugin_name }} ${{ steps.get_plugin_version.outputs.plugin_version }} $GITHUB_SHA
@@ -45,7 +45,5 @@ jobs:
           git config --global user.email "${{ env.CI_COMMIT_AUTHOR_EMAIL }}"
           
           git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
-
-          git remote set-url --push origin https://${GITHUB_ACTOR}:${{secrets.GITHUB_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git
           git push
             
