@@ -44,6 +44,7 @@ jobs:
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "${{ env.CI_COMMIT_AUTHOR_EMAIL }}"
           
+          git checkout main
           git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
           git push
             
