@@ -20,7 +20,7 @@ jobs:
       - name: Get plugin name
         id: get_plugin_name
         run: |
-          echo "plugin_name=$(git diff --name-only HEAD~1 HEAD~2 | grep -m1 "" | cut -d'/' -f2)" >> $GITHUB_OUTPUT
+          echo "plugin_name=$(git diff --name-only HEAD HEAD~1 | grep -m1 "" | cut -d'/' -f2)" >> $GITHUB_OUTPUT
 
       - name: Get plugin version
         id: get_plugin_version
