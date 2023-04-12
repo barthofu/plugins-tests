@@ -1,9 +1,9 @@
 const fs = require('fs')
 const versionsRegistry = require('../versions.json')
 
-const pluginName = process.argv[0]
-const pluginVersion = process.argv[1]
-const commitHash = process.argv[2]
+const pluginName = process.argv[2]
+const pluginVersion = process.argv[3]
+const commitHash = process.argv[4]
 
 // plugin doesn't exists in the registry
 if (!versionsRegistry[pluginName]) {
